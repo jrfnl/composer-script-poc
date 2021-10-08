@@ -1,0 +1,47 @@
+name: POC
+
+on:
+  # Run on all pushes and on all pull requests.
+  push:
+  pull_request:
+
+jobs:
+  checkcs:
+    name: 'Testing 1-2-3'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          coverage: none
+
+      # Install dependencies and handle caching in one go.
+      # @link https://github.com/marketplace/actions/install-composer-dependencies
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v1
+
+      - name: Return zero
+        run: composer return-zero
+
+      - name: Exit zero
+        run: composer exit-zero
+
+      - name: Return one
+        run: composer return-one
+
+      - name: Exit one
+        if: ${{ failure() }}
+        run: composer exit-one
+
+      - name: Return more
+        if: ${{ failure() }}
+        run: composer return-more
+
+      - name: Exit more
+        if: ${{ failure() }}
+        run: composer exit-more

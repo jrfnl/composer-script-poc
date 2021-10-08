@@ -1,0 +1,32 @@
+{
+	"name": "jrfnl/composer-script-poc",
+	"description": "Just testing some things.",
+	"require": {
+		"php": "^7.0"
+	},
+	"autoload-dev": {
+		"classmap": [
+			"Composer/"
+		]
+	},
+	"scripts": {
+		"return-zero": [
+			"Jrfnl\\Composer\\Actions::return_zero"
+		],
+		"return-one": [
+			"Jrfnl\\Composer\\Actions::return_one"
+		],
+		"return-more": [
+			"Jrfnl\\Composer\\Actions::return_more"
+		],
+		"exit-zero": [
+			"Jrfnl\\Composer\\Actions::exit_zero"
+		],
+		"exit-one": [
+			"Jrfnl\\Composer\\Actions::exit_one"
+		],
+		"exit-more": [
+			"Jrfnl\\Composer\\Actions::exit_more"
+		]
+	}
+}
