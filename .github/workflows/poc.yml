@@ -48,3 +48,8 @@ jobs:
       - name: Exit more
         if: ${{ failure() }}
         run: composer exit-more
+
+      - name: Exit two with additional commands
+        if: ${{ always() }}
+        run: composer exit-two-plus
+

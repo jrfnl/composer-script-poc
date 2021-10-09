@@ -25,6 +25,11 @@
 		"exit-one": [
 			"Jrfnl\\Composer\\Actions::exit_one"
 		],
+		"exit-two-plus": [
+			"@putenv YOASTCS_THRESHOLD_ERRORS=255",
+			"@putenv YOASTCS_THRESHOLD_WARNINGS=222",
+			"Jrfnl\\Composer\\Actions::exit_two"
+		],
 		"exit-more": [
 			"Jrfnl\\Composer\\Actions::exit_more"
 		]

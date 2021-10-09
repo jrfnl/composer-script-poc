@@ -19,6 +19,12 @@ class Actions {
         exit( 1 );
     }
 
+    public static function exit_two()
+    {
+        // Do something.
+        exit( 2 );
+    }
+
     public static function exit_more()
     {
         // Do something.
