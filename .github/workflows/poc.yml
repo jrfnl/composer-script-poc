@@ -42,9 +42,9 @@ jobs:
         run: composer exit-one
 
       - name: Return more
-        if: ${{ always() }}
+        if: ${{ failure() }}
         run: composer return-more
 
       - name: Exit more
-        if: ${{ always() }}
+        if: ${{ failure() }}
         run: composer exit-more
