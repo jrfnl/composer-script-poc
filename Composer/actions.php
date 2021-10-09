@@ -31,6 +31,13 @@ class Actions {
         exit( 137 );
     }
 
+    public static function exit_variable()
+    {
+        @\passthru( "composer exit-two", $return );
+
+        exit( $return );
+    }
+
     public static function return_zero()
     {
         // Do something.

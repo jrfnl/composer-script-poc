@@ -32,6 +32,9 @@
 		],
 		"exit-more": [
 			"Jrfnl\\Composer\\Actions::exit_more"
+		],
+		"exit-var": [
+			"Jrfnl\\Composer\\Actions::exit_variable"
 		]
 	}
 }

@@ -25,25 +25,25 @@ jobs:
       - name: Install Composer dependencies
         uses: ramsey/composer-install@v1
 
-      - name: Return zero
-        if: ${{ always() }}
-        run: composer return-zero
+#      - name: Return zero
+#        if: ${{ always() }}
+#        run: composer return-zero
 
       - name: Exit zero
         if: ${{ always() }}
         run: composer exit-zero
 
-      - name: Return one
-        if: ${{ always() }}
-        run: composer return-one
+#      - name: Return one
+#        if: ${{ always() }}
+#        run: composer return-one
 
       - name: Exit one
         if: ${{ always() }}
         run: composer exit-one
 
-      - name: Return more
-        if: ${{ failure() }}
-        run: composer return-more
+#      - name: Return more
+#        if: ${{ failure() }}
+#        run: composer return-more
 
       - name: Exit more
         if: ${{ failure() }}
@@ -53,3 +53,6 @@ jobs:
         if: ${{ always() }}
         run: composer exit-two-plus
 
+      - name: Exit variable
+        if: ${{ always() }}
+        run: composer exit-var
