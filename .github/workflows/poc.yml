@@ -56,3 +56,15 @@ jobs:
       - name: Exit variable
         if: ${{ always() }}
         run: composer exit-var
+
+      - name: Exit zero without const - subprocess exit two
+        if: ${{ always() }}
+        run: composer exit-two-no-const
+
+      - name: Exit two with const - subprocess exit two
+        if: ${{ always() }}
+        run: composer exit-two-with-const
+
+      - name: Exit more no const - subprocess exit more
+        if: ${{ always() }}
+        run: composer exit-more-no-const

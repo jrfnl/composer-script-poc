@@ -35,6 +35,18 @@
 		],
 		"exit-var": [
 			"Jrfnl\\Composer\\Actions::exit_variable"
+		],
+		"exit-two-no-const": [
+			"Jrfnl\\Composer\\Actions::exit_two_no_const"
+		],
+		"exit-two-with-const": [
+			"Jrfnl\\Composer\\Actions::exit_two_with_const"
+		],
+		"exit-two-set-const": [
+			"Jrfnl\\Composer\\Actions::exit_two_set_const"
+		],
+		"exit-more-no-const": [
+			"Jrfnl\\Composer\\Actions::exit_more_no_const"
 		]
 	}
 }

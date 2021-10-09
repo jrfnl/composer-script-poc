@@ -38,6 +38,35 @@ class Actions {
         exit( $return );
     }
 
+
+    public static function exit_two_no_const()
+    {
+        @\passthru( "composer exit-two-plus", $return );
+
+        exit ( ( ( \defined( 'YOASTCS_ABOVE_THRESHOLD' ) && \YOASTCS_ABOVE_THRESHOLD === true ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_two_with_const()
+    {
+        @\passthru( "composer exit-two-set-const", $return );
+
+        exit ( ( ( \defined( 'YOASTCS_ABOVE_THRESHOLD' ) && \YOASTCS_ABOVE_THRESHOLD === true ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_more_no_const()
+    {
+        @\passthru( "composer exit-more", $return );
+
+        exit ( ( ( \defined( 'YOASTCS_ABOVE_THRESHOLD' ) && \YOASTCS_ABOVE_THRESHOLD === true ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_two_set_const()
+    {
+		define( 'YOASTCS_ABOVE_THRESHOLD', true );
+
+        exit( 2 );
+    }
+
     public static function return_zero()
     {
         // Do something.
