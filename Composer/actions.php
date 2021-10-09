@@ -62,7 +62,35 @@ class Actions {
 
     public static function exit_two_set_const()
     {
-		define( 'YOASTCS_ABOVE_THRESHOLD', true );
+        define( 'YOASTCS_ABOVE_THRESHOLD', true );
+
+        exit( 2 );
+    }
+
+    public static function exit_two_no_env()
+    {
+        @\passthru( "composer exit-two-plus", $return );
+
+        exit ( ( \getenv( 'YOASTCS_ABOVE_THRESHOLD' ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_two_with_env()
+    {
+        @\passthru( "composer exit-two-set-env", $return );
+
+        exit ( ( \getenv( 'YOASTCS_ABOVE_THRESHOLD' ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_more_no_env()
+    {
+        @\passthru( "composer exit-more", $return );
+
+        exit ( ( \getenv( 'YOASTCS_ABOVE_THRESHOLD' ) || $return > 2 ) ? $return : 0 );
+    }
+
+    public static function exit_two_set_env()
+    {
+        putenv( 'YOASTCS_ABOVE_THRESHOLD=true' );
 
         exit( 2 );
     }

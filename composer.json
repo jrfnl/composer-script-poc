@@ -47,6 +47,18 @@
 		],
 		"exit-more-no-const": [
 			"Jrfnl\\Composer\\Actions::exit_more_no_const"
+		],
+		"exit-two-no-env": [
+			"Jrfnl\\Composer\\Actions::exit_two_no_env"
+		],
+		"exit-two-with-env": [
+			"Jrfnl\\Composer\\Actions::exit_two_with_env"
+		],
+		"exit-two-set-env": [
+			"Jrfnl\\Composer\\Actions::exit_two_set_env"
+		],
+		"exit-more-no-env": [
+			"Jrfnl\\Composer\\Actions::exit_more_no_env"
 		]
 	}
 }

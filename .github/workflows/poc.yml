@@ -68,3 +68,15 @@ jobs:
       - name: Exit more no const - subprocess exit more
         if: ${{ always() }}
         run: composer exit-more-no-const
+
+      - name: Exit zero without env - subprocess exit two
+        if: ${{ always() }}
+        run: composer exit-two-no-env
+
+      - name: Exit two with env - subprocess exit two
+        if: ${{ always() }}
+        run: composer exit-two-with-env
+
+      - name: Exit more no env - subprocess exit more
+        if: ${{ always() }}
+        run: composer exit-more-no-env
