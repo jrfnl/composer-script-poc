@@ -35,13 +35,10 @@ jobs:
         run: composer return-one
 
       - name: Exit one
-        if: ${{ failure() }}
         run: composer exit-one
 
       - name: Return more
-        if: ${{ failure() }}
         run: composer return-more
 
       - name: Exit more
-        if: ${{ failure() }}
         run: composer exit-more
