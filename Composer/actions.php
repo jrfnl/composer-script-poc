@@ -50,6 +50,9 @@ class Actions {
     {
         @\passthru( "composer exit-two-set-const", $return );
 
+        var_dump(\defined( 'YOASTCS_ABOVE_THRESHOLD' ));
+        var_dump(\YOASTCS_ABOVE_THRESHOLD);
+
         exit ( ( ( \defined( 'YOASTCS_ABOVE_THRESHOLD' ) && \YOASTCS_ABOVE_THRESHOLD === true ) || $return > 2 ) ? $return : 0 );
     }
 
@@ -77,6 +80,8 @@ class Actions {
     public static function exit_two_with_env()
     {
         @\passthru( "composer exit-two-set-env", $return );
+
+        var_dump(\getenv( 'YOASTCS_ABOVE_THRESHOLD' ));
 
         exit ( ( \getenv( 'YOASTCS_ABOVE_THRESHOLD' ) || $return > 2 ) ? $return : 0 );
     }
