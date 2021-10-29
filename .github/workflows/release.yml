@@ -1,0 +1,21 @@
+name: release
+
+on:
+  # Trigger the workflow whenever a new release is created.
+  release:
+    types:
+      - published
+
+jobs:
+  test:
+    name: 'Testing 1-2-3: release'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Triggered!
+        run: echo 'Workflow triggered!'

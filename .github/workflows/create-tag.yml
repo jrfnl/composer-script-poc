@@ -1,0 +1,19 @@
+name: createtag
+
+on:
+  create:
+
+jobs:
+  test:
+    if: ${{ startsWith(github.ref, 'refs/tags/') }}
+    name: 'Testing 1-2-3: tag create'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
+      - name: Triggered!
+        run: echo 'Workflow triggered!'
