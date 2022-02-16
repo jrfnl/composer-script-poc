@@ -1,0 +1,18 @@
+name: ghcontext
+
+on:
+  # Run on all pushes and on all pull requests.
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: 'Testing GH context'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
